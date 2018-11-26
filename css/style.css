@@ -1,0 +1,570 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,400,700');
+
+body {
+    font-family: 'Raleway', sans-serif;
+}
+
+.main__width {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* header (logo+nav) */
+
+header {
+    width: 100%;
+    background-color: #000;
+}
+
+header > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: #fff;
+    font-size: 25px;
+}
+
+.logo span {
+    font-weight: 700;
+    color: #2fd2b7;
+}
+
+.menu {
+    display: flex;
+}
+
+.menu li a {
+    display: block;
+    color: #fff;
+    padding: 20px;
+    font-weight: 700;
+}
+
+/*zeby bylo na maxa do prawej w kontenerze */
+.menu li:last-child a {
+    padding-right: 0;
+}
+
+/*+ symetria z lewej*/
+.menu li:first-child a {
+    padding-left: 0;
+}
+
+/*zeby zaczepic dropdown ktore bedzie absolute w stosunku do tego*/
+.menu li {
+    position: relative;
+}
+
+/*dropdown menu*/
+.menu--dropdown {
+    display: none;
+    position: absolute;
+    left: -10px;
+    top: 40px;
+    padding-top: 30px;
+}
+
+.menu--dropdown li {
+    color: white;
+    background-color: #000;
+    padding: 0 10px;
+}
+
+.menu--dropdown li a {
+    font-weight: normal;
+    padding: 10px;
+}
+
+/* arrow UP */
+.menu--dropdown:before {
+    content: '';
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid black;
+    position: absolute;
+    top: 20px;
+    left: 40px;
+    z-index: 1;
+}
+
+/* display dropdown on hover */
+.menu > li:hover .menu--dropdown {
+    display: block;
+}
+
+/* SECTION SLIDER */
+
+.slider {
+    width: 100%;
+    background-image: linear-gradient(white, lightgrey);
+}
+
+.slider > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* style buttons */
+.slider--button a {
+    color: #2fd2b7;
+    font-size: 42px;
+    /* większy obszar do klikania */
+    /*padding: 40px;*/
+}
+
+.slider__gallery li {
+    display: flex;
+}
+
+/* SLIDER */
+
+/*.slider__gallery li {*/
+    /*display: none;*/
+/*}*/
+
+/*.slider__gallery .visible {*/
+    /*display: flex;*/
+/*}*/
+
+/*.slider__gallery li img {*/
+    /*width: 400px;*/
+    /*height: auto;*/
+/*}*/
+
+h2 {
+    font-size: 30px;
+}
+
+p {
+    font-size: 12px;
+}
+
+.slider__gallery li h2:not(span) {
+    color: #000;
+}
+
+.slider__gallery a {
+    font-size: 20px;
+    border: 1px solid #2fd2b7;
+    border-radius: 5px;
+    background-color: #2fd2b7;
+    color: white;
+    padding: 10px 30px;
+    margin-right: 50px;
+}
+
+.slider__gallery li > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.slider > div {
+    margin-top: 50px;
+}
+
+.slider__gallery h2 {
+    margin: 50px 50px 30px 0;
+}
+
+.slider__gallery p {
+    margin-right: 50px;
+    margin-bottom: 50px;
+}
+
+/* GALLERY */
+.chairs {
+    width: 100%;
+    margin-top: 25px;
+}
+
+.chairs > div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.chairs__image {
+    width: 320px;
+    position: relative;
+}
+
+.chairs__image a h4 {
+    position: absolute;
+    top: 140px;
+    left: 0;
+    padding-top: 15px;
+    padding-left: 10px;
+    color: #000;
+    background-color: rgba(0, 0, 0, 0.1);
+    width: 320px;
+    height: 60px;
+}
+
+h4 {
+    position: relative;
+    font-weight: 700;
+}
+
+.underline:after {
+    content: '';
+    width: 140px;
+    height: 5px;
+    position: absolute;
+    top: 35px;
+    left: 10px;
+    background-color: #2fd2b7;
+}
+
+/* chairs -> opis */
+
+.chairs__description {
+    /* NIE LEPIEJ RÓWNE ?? */
+    width: 320px;
+    height: 240px;
+    border: 1px solid #d5d5d5;
+    padding: 20px;
+}
+
+.chairs__description p {
+    padding-top: 20px;
+}
+
+.chairs__description > .underline:after {
+    top: 20px;
+    left: 0;
+}
+
+/* CENNIK */
+h3 {
+    position: relative;
+    font-size: 25px;
+}
+
+.prices > div > h3 {
+    margin-top: 25px;
+    display: inline-block;
+}
+
+.prices > div > .underline:after,
+.contact > div > .underline:after {
+    left: 0;
+    top: 30px;
+    width: 300px;
+    height: 8px;
+}
+
+.prices {
+    margin: 50px 0 30px 0;
+    padding-bottom: 50px;
+    width: 100%;
+    background-color: #f1f1f1;
+    font-size: 25px;
+}
+
+.prices > div > ul {
+    margin-top: 65px;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    /*kolor planu, do nadpisania dla dalszych ponizej*/
+    color: #2fd2b7;
+}
+
+.prices__plan {
+    position: relative;
+    background-color: #f9f9f9;
+    border: 2px solid #d5d5d5;
+    padding: 40px 0;
+    /*width: 320px;*/
+    width: 31%;
+    height: 550px;
+}
+
+.prices__plan ul {
+    display: flex;
+    flex-direction: column;
+    /*justify-content: space-between;*/
+    /*align-items: center;*/
+}
+
+.prices__plan ul li {
+    width: 100%;
+}
+
+/* PRICE RING SETUP */
+
+.prices__plan--price {
+    /*display: flex;*/
+    /*flex-direction: column;*/
+    /*justify-content: center;*/
+    /*align-items: center;*/
+    /*color: #c2c2c2;*/
+    /*position: relative;*/
+    font-size: 45px;
+    margin: 50px 0;
+}
+
+.prices__plan--price li {
+    font-weight: 700;
+    color: #c2c2c2;
+    z-index: 1;
+    /* blizej siebie cena+pln/msc */
+    line-height: 15px;
+
+}
+
+.prices__plan--price li sup {
+    font-size: 25px;
+    font-weight: 700;
+    /* lepiej wyglada przesuniete do gory lekko */
+    top: -25px;
+}
+
+.prices__plan--price li:last-of-type {
+    font-size: 18px;
+    /* blizej siebie cena+pln/msc */
+    line-height: 15px;
+}
+
+.prices__plan:after {
+    content: '';
+    width: 140px;
+    height: 140px;
+    background-color: #fff;
+    border: 2px solid #d5d5d5;
+    border-radius: 50%;
+    position: absolute;
+    /*top: -30px;*/
+    top: 90px;
+    /*width 320*/
+    /*left: 90px;*/
+    left: calc(50% - 70px);
+}
+
+/* nadpisanie stylu, na przemian dla elementow ponizej planu */
+.prices__plan > ul li {
+    padding: 10px 0;
+}
+
+/* bez not:last-child to psuje prices__plan--price
+  jak to lepiej zapisac?*/
+.prices__plan > ul li:nth-of-type(2n+2):not(:last-child) {
+    background-color: #e4e4e4;
+    color: #969696;
+}
+
+.prices__plan > ul li:nth-of-type(2n+3):not(:last-child) {
+    background-color: #eaeaea;
+    color: #757575;
+}
+
+/* kropka nad planem */
+.prices__plan > ul:before {
+    content: '';
+    width: 50px;
+    height: 50px;
+    background-color: #c2c2c2;
+    border: 2px solid #d5d5d5;
+    border-radius: 50%;
+
+    position: absolute;
+    top: -25px;
+    left: calc(50% - 25px);
+    box-shadow: inset 0 0 0 11px #fff;
+}
+
+/* 'DOŁĄCZ' button */
+
+.prices__plan a {
+    width: 180px;
+    /*padding: 10px 0;*/
+    height: 40px;
+    line-height: 40px;
+    border-radius: 10px;
+    background-color: #2fd2b7;
+    color: #fff;
+    position: absolute;
+    bottom: 20px;
+    left: calc(50% - 90px);
+}
+
+/* hover change */
+
+.prices__plan:hover {
+    background-color: #2fd2b7;
+    color: #fff;
+    border-color: #2fd2b7;
+}
+
+.prices__plan:hover .prices__plan--price {
+    color: #2fd2b7;
+}
+
+.prices__plan:hover > ul:before {
+    background-color: #2fd2b7;
+    border-color: #2fd2b7;
+}
+
+.prices__plan:hover:after {
+    border-color: #2fd2b7;
+}
+
+.prices__plan:hover > ul li:nth-of-type(2n+2):not(:last-child) {
+    background-color: #fff;
+    color: #969696;
+}
+
+.prices__plan:hover a {
+    background-color: #fff;
+    color: #2fd2b7;
+}
+
+/* FINISHED CENNIK */
+
+/* CONTACT FORM */
+
+.contact__form {
+    margin-top: 50px;
+    width: 100%;
+    height: 550px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+}
+
+.contact__form img,
+.contact__form input[type='submit'] {
+    width: 350px;
+}
+
+input[type='text'],
+input[type='email'],
+textarea {
+    width: 600px;
+    border: 1px solid #2fd2b7;
+    font-size: 30px;
+    padding: 10px;
+}
+
+textarea {
+    resize: none;
+}
+
+.contact__form input[type='submit'] {
+    /* THIS border REMOVED SHADOW */
+    border: 1px solid #2fd2b7;
+    border-radius: 10px;
+    background-color: #2fd2b7;
+    color: #fff;
+    /*width: 370px;*/
+    padding: 30px 0;
+    font-size: 33px;
+    font-weight: 700;
+
+    margin-bottom: 5px;
+}
+
+/* custom checkbox */
+
+/* Customize the label (.checkbox class here) */
+.checkbox {
+    display: block;
+    position: relative;
+    left: 50px;
+    color: #969696;
+    width: 350px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+}
+
+/* Hide the browser's default radio button */
+
+.checkbox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* Create a custom radio button */
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: -55px;
+    height: 50px;
+    width: 50px;
+    border: 1px solid #2fd2b7;
+}
+
+/* On mouse-over, add background color */
+.checkbox:hover input ~ .checkmark {
+    background-color: #f1f1f1;
+}
+
+/* When the checkbox is checked, add a blue background */
+/*.checkbox input:checked ~ .checkmark {*/
+/*background-color: #2196F3;*/
+/*}*/
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.checkbox input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+.checkbox .checkmark:after {
+    left: 15px;
+    top: 0;
+    width: 20px;
+    height: 40px;
+    border: solid #2fd2b7;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+}
+
+/* CONTACT FORM END */
+
+/* FOOTER */
+footer {
+    margin-top: 60px;
+    margin-bottom: 30px;
+}
+
+footer > div,
+footer > div > div {
+    display: flex;
+    color: #979797;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer > div > div {
+    width: 370px;
+}
+
+footer .logo,
+footer .logo span {
+    color: #979797;
+}
