@@ -101,9 +101,10 @@ header div.main__width > a {
 }
 
 /* display dropdown on hover */
-.menu > li:hover .menu--dropdown {
-    display: block;
-}
+/* MOVED FEATURE TO JS */
+/*.menu > li:hover .menu--dropdown {*/
+    /*display: block;*/
+/*}*/
 
 /*------------------------------------------------------------------------------------*/
 /* SECTION SLIDER */
@@ -604,4 +605,21 @@ footer > div > div {
 footer .logo,
 footer .logo span {
     color: #979797;
+}
+
+/*------------------------------------------------------------------------------------*/
+/* TEST ANIMATION */
+@keyframes fade {
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
