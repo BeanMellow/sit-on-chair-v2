@@ -30,9 +30,11 @@ header > div {
     color: #fff;
 }
 
-/* wielkosc loga tylko w headerze */
+/* logo size in header */
 header div.main__width > a {
     font-size: 25px;
+    /* symmetry with nav on the other side (20 padding there) */
+    margin-left: 20px;
 }
 
 .logo span {
@@ -51,17 +53,16 @@ header div.main__width > a {
     font-weight: 700;
 }
 
-/*zeby bylo na maxa do prawej w kontenerze */
-.menu li:last-child a {
-    padding-right: 0;
-}
+/*!* this aligned menu btns to the edge of container - pointless *!*/
+/*.menu li:last-child a {*/
+    /*padding-right: 0;*/
+/*}*/
+/*!*+ symetria z lewej*!*/
+/*.menu li:first-child a {*/
+    /*padding-left: 0;*/
+/*}*/
 
-/*+ symetria z lewej*/
-.menu li:first-child a {
-    padding-left: 0;
-}
-
-/*zeby zaczepic dropdown ktore bedzie absolute w stosunku do tego*/
+/* dropdown menu attached here */
 .menu li {
     position: relative;
 }
@@ -100,8 +101,8 @@ header div.main__width > a {
     z-index: 1;
 }
 
-/* display dropdown on hover */
 /* MOVED FEATURE TO JS */
+/* display dropdown on hover */
 /*.menu > li:hover .menu--dropdown {*/
     /*display: block;*/
 /*}*/
@@ -116,29 +117,31 @@ header div.main__width > a {
 
 .slider > div {
     display: flex;
-    /* ustawione tak % ze to nic nie zmienia */
+    /* right now % set to take 100% space - justify-content does nothing atm */
     /*justify-content: space-between;*/
     align-items: center;
     margin-top: 50px;
 }
 
-/*ust width diva w ktorym sa buttony*/
+/* set up div containing btns */
 .slider--button {
     width: 5%;
 }
-/* zeby przylegaly do krawedzi strony */
-.slider--button:first-of-type a {
+
+/* align each slider button max left/right */
+.slider--button:first-of-type span {
     float: left;
 }
-.slider--button:last-of-type a {
+.slider--button:last-of-type span {
     float: right;
 }
 
 /* style buttons */
-.slider--button a {
+.slider--button span {
     color: #2fd2b7;
     font-size: 42px;
-    /* większy obszar do klikania */
+    cursor: pointer;
+    /* bigger 'click' area */
     /*padding: 40px;*/
 }
 
@@ -146,7 +149,7 @@ header div.main__width > a {
     width: 90%;
 }
 
- /*SLIDER*/
+ /* SLIDER */
 
 .slider__gallery li {
     display: none;
@@ -158,7 +161,7 @@ header div.main__width > a {
     display: flex;
 }
 
-/* TEST DIVA */
+/* img divs */
 .slider__gallery__black_chair {
     background-image: url('../image/black_chair.png');
     background-size: cover;
@@ -260,7 +263,7 @@ background-color: #2fd2b7;
 }
 
 .chairs div.main__width div.chairs__description {
-    /*display: flex;*/
+    display: flex;
     height: 220px;
     margin-top: 25px;
     flex-direction: column;
@@ -281,7 +284,7 @@ left: 0;
 
 /*------------------------------------------------------------------------------------*/
 
-/* CENNIK */
+/* PRICE LIST */
 h3 {
     position: relative;
     font-size: 25px;
@@ -313,7 +316,6 @@ h3 {
     display: flex;
     justify-content: space-between;
     text-align: center;
-    /*kolor planu, do nadpisania dla dalszych ponizej*/
     color: #2fd2b7;
 }
 
@@ -322,7 +324,6 @@ h3 {
     background-color: #f9f9f9;
     border: 2px solid #d5d5d5;
     padding: 40px 0;
-    /*width: 320px;*/
     width: 31%;
     height: 550px;
 }
@@ -330,8 +331,6 @@ h3 {
 .prices__plan ul {
     display: flex;
     flex-direction: column;
-    /*justify-content: space-between;*/
-    /*align-items: center;*/
 }
 
 .prices__plan ul li {
@@ -341,12 +340,6 @@ h3 {
 /* PRICE RING SETUP */
 
 .prices__plan--price {
-    /*display: flex;*/
-    /*flex-direction: column;*/
-    /*justify-content: center;*/
-    /*align-items: center;*/
-    /*color: #c2c2c2;*/
-    /*position: relative;*/
     font-size: 45px;
     margin: 50px 0;
 }
@@ -355,7 +348,7 @@ h3 {
     font-weight: 700;
     color: #c2c2c2;
     z-index: 1;
-    /* blizej siebie cena+pln/msc */
+    /* price+pln/msc closer together */
     line-height: 15px;
 
 }
@@ -363,13 +356,13 @@ h3 {
 .prices__plan--price li sup {
     font-size: 25px;
     font-weight: 700;
-    /* lepiej wyglada przesuniete do gory lekko */
+    /* looks better when moved up a bit */
     top: -25px;
 }
 
 .prices__plan--price li:last-of-type {
+    /* price+pln/msc closer together */
     font-size: 18px;
-    /* blizej siebie cena+pln/msc */
 }
 
 .prices__plan:after {
@@ -380,20 +373,18 @@ h3 {
     border: 2px solid #d5d5d5;
     border-radius: 50%;
     position: absolute;
-    /*top: -30px;*/
     top: 90px;
-    /*width 320*/
+    /* 320px * 1/2 - 70px = left: 90px; */
     /*left: 90px;*/
     left: calc(50% - 70px);
 }
 
-/* nadpisanie stylu, na przemian dla elementow ponizej planu */
+/* style 'perks' listed below each plan */
 .prices__plan > ul li {
     padding: 10px 0;
 }
 
-/* bez not:last-child to psuje prices__plan--price
-  jak to lepiej zapisac?*/
+/* alternate bg colors */
 .prices__plan > ul li:nth-of-type(2n+2):not(:last-child) {
     background-color: #e4e4e4;
     color: #969696;
@@ -404,7 +395,7 @@ h3 {
     color: #757575;
 }
 
-/* kropka nad planem */
+/* circle-dot above plans */
 .prices__plan > ul:before {
     content: '';
     width: 50px;
@@ -423,7 +414,6 @@ h3 {
 
 .prices__plan a {
     width: 180px;
-    /*padding: 10px 0;*/
     height: 40px;
     line-height: 40px;
     border-radius: 10px;
@@ -465,7 +455,7 @@ h3 {
     color: #2fd2b7;
 }
 
-/* FINISHED CENNIK */
+/* FINISHED PRICE LIST */
 
 /*------------------------------------------------------------------------------------*/
 
@@ -501,22 +491,19 @@ textarea {
 }
 
 .contact__form input[type='submit'] {
-    /* THIS border REMOVED SHADOW */
+    /* remove default button shadow */
     border: 1px solid #2fd2b7;
     border-radius: 10px;
     background-color: #2fd2b7;
     color: #fff;
-    /*width: 370px;*/
     padding: 30px 0;
     font-size: 33px;
     font-weight: 700;
-
     margin-bottom: 5px;
 }
 
-/* custom checkbox */
+/* CUTOM CHECKBOX */
 
-/* Customize the label (.checkbox class here) */
 .checkbox {
     display: block;
     position: relative;
@@ -528,8 +515,6 @@ textarea {
     font-size: 22px;
 }
 
-/* Hide the browser's default radio button */
-
 .checkbox input {
     position: absolute;
     opacity: 0;
@@ -538,7 +523,6 @@ textarea {
     width: 0;
 }
 
-/* Create a custom radio button */
 .checkmark {
     position: absolute;
     top: 0;
@@ -548,29 +532,24 @@ textarea {
     border: 1px solid #2fd2b7;
 }
 
-/* On mouse-over, add background color */
 .checkbox:hover input ~ .checkmark {
     background-color: #f1f1f1;
 }
 
-/* When the checkbox is checked, add a blue background */
-/*.checkbox input:checked ~ .checkmark {*/
-/*background-color: #2196F3;*/
-/*}*/
+.checkbox input:checked ~ .checkmark {
+background-color: #e8fffc;
+}
 
-/* Create the indicator (the dot/circle - hidden when not checked) */
 .checkmark:after {
     content: "";
     position: absolute;
     display: none;
 }
 
-/* Show the indicator (dot/circle) when checked */
 .checkbox input:checked ~ .checkmark:after {
     display: block;
 }
 
-/* Style the checkmark/indicator */
 .checkbox .checkmark:after {
     left: 15px;
     top: 0;
@@ -608,7 +587,7 @@ footer .logo span {
 }
 
 /*------------------------------------------------------------------------------------*/
-/* TEST ANIMATION */
+/* ANIMATIONS */
 @keyframes fade {
     100% {
         opacity: 0;
